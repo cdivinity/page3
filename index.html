@@ -1,210 +1,41 @@
-<!-- inputs.html -->
- 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script>
-
- 
-   // So Professional
-   function setInitials()
-   {
-       document.getElementById("initials").innerHTML =
-       document.getElementById("fname").value.substring(0,1) + ". " +
-       document.getElementById("lname").value.substring(0,1) + ".";
-   }
- 
-   // Good Runner
-   function respond(device)
-   {
-       document.getElementById("runner").innerHTML = device.value + " , Farting is always good"; 
-   }
- 
-   //How fast are you?
-   function evaluateTime(rad)
-   {
-       if (rad.value == "9")
-       {
-           document.getElementById("times").innerHTML = " a good game." 
-           document.body.style.background = 'gold';
-        
-       }
-       else if (rad.value == "8")
-       {
-           document.getElementById("times").innerHTML = "a good game"
-           document.body.style.background = 'green';
-       }
-       else if (rad.value == "7")
-       {
-       document.getElementById("times").innerHTML = "a good game"
-       document.body.style.background = 'grey';
-       }
-       else if (rad.value == "6")
-       {
-       document.getElementById("times").innerHTML = "a good game"
-       document.body.style.background = 'purple';
-       }
-       else if (rad.value == "5")
-       {
-       document.getElementById("times").innerHTML = "a good game"
-       document.body.style.background = 'black';
-       }
- 
- 
-       
-   }
- 
- 
-   function print(str)
-   {
-       document.getElementById("output").innerHTML += str + "<br />";
-   }
- 
-   // Do you like it?
-   var boxes = []; //This is a list.
-   function examineLikes()
-   {
- 
-       if (boxes.length == 0)
-       {
-           boxes.push( document.getElementById("box1") );
- 
-           boxes.push( document.getElementById("box2") );
-         
-           boxes.push( document.getElementById("box3") );
-         
-           boxes.push( document.getElementById("box4") );
-       }
- 
-       document.getElementById("output").innerHTML = "";
-       //  print("length: " + boxes.length);
- 
-       var count = 0;
- 
-       for (var rep = 0; rep < boxes.length; rep++)
-       {
-           if (boxes[rep].checked)
-           {
-               count++;
-           }
-       }
-       if (count == 0)
-       {
-           print("You really hate school");
-       }
-       else if (count <= 2)
-       {
-           print("Average");
-       }
-       else
-       {
-           print("You truly love school, so you are most likly a nerd");
-       }
-   }
- 
-   //Turn that frown
-   function changePics()
-   {
-       let pic = "https://media0.giphy.com/media/ul1omlrGG6kpO/giphy.gif"
-       for (var rep = 0; rep < document.images.length; rep++)
-       {
-           document.images[rep].src = pic;
-           document.body.style.background = 'gold';
-       }
-   }
- 
-</script>
- 
+  <meta charset="utf-8">
+  <title>Document</title>
 </head>
-   <h3>Fun with colors</h3>
-   <body style="background-color:rgb(59, 224, 9); color: white;">
- 
-   <input type="checkbox" onclick="changePageColor(this)" />
- 
-   Change background color<br/>
- 
-   <input type="text" id="pageColor" onclick="changePageColor(this)" /> Color
- 
-   <hr/>
- 
-   <h3>So Professional</h3>
-   First name: <input type="text" id="fname" name="fname"><br />
- 
-   Last name: <input type="text" id="lname" name="lname"><br />
- 
-   <input type="button" value="Initials" onclick="setInitials()" />
- 
-   <div id="initials"></div>
-   <hr>
-   <h3>farts</h3>
-   <label for="Runners">how mcuh you fart:</label>
-   <select id="runners" onChange="respond(this)">
-       <option value="9 a day">9 a day</option>
-     
-       <option value="8 a day">8 a day</option>
- 
-       <option value="5 a day">5 a day</option>
-     
-       <option value="2 a day"> 2 a day</option>
- 
-       <option value="0 a day">0 a day</option>
-     
-       
-   </select>
- 
-   <div id="runner"></div>
- 
-   <hr/>
-       <h3>Games</h3>
-       <p>Pick you game</p>
- 
-       <input type="radio" name="mileTime" onChange=evaluateTime(this) value="9"><a href="https://arcadespot.com/game/kingdom-hearts-chain-memories/"> Kingdom hearts</a>
-    </a><br /> 
+<body>
+  <h1>Random queations </h1>
+  <form action="http://bloomingdale.sat.iit.edu/kriedan/lab3formscript.php" method="post">
+    <fieldset>
+      <legend>My Info</legend>
+      <div><label>favorite song: <input size="100" type="text" name="first_name_field"></label></div>
+      <div><label>favorite fruit: <input size="100" type="text" name="last_name_field"></label></div>
 
-       <input type="radio" name="mileTime" onChange=evaluateTime(this) value="8"><a href="https://arcadespot.com/game/digimon-rumble-arena/">digimon</a><br />
- 
-       <input type="radio" name="mileTime" onChange=evaluateTime(this) value="7"><a href="https://emulatorgames.online/games/n64/super-smash-bros">smash bros</a><br />
- 
-       <input type="radio" name="mileTime" onChange=evaluateTime(this) value="6"><a href="https://arcadespot.com/game/dragon-ball-z-buus-fury/">dragon ball </a><br />
-       <input type="radio" name="mileTime" onChange=evaluateTime(this) value="6"><a href="https://arcadespot.com/game/beyblade-g-revolution/">beyblade </a><br />
- 
-       
- 
+      <div>Do you like corn: </div>
+      <div>
+        <label>yes <input type="radio" name="Yes_field" value="male"></label>
+        <label>No <input type="radio" name="No_field" value="female"></label>
+      </div>
       
- 
-       <div id="times"></div>
- 
-       <hr />
- 
-       <h3>Do you like it?</h3>
-       <p>What do you like about school</p>
- 
-       <input type="checkbox" id="box1" /> gym<br />
- 
-       <input type="checkbox" id="box2" /> teahcers<br />
- 
-       <input type="checkbox" id="box3" /> lunch<br />
- 
-       <input type="checkbox" id="box4" /> leaving<br />
- 
-       <input type="button" value="Feedback" onclick="examineLikes()" />
- 
-       <div id="output"></div>
- 
-       <hr>
- 
-       <h3>go Super Saiyan</h3>
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzm0mn5uAkBKYPaprsaSkIfUfSHzB_kHO1qPyDLsftrKTqIn0C-e3HjXGvgFYZqsNn6hE&usqp=CAU" width="100px"/>
- 
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzm0mn5uAkBKYPaprsaSkIfUfSHzB_kHO1qPyDLsftrKTqIn0C-e3HjXGvgFYZqsNn6hE&usqp=CAU" width="100px"/>
- 
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzm0mn5uAkBKYPaprsaSkIfUfSHzB_kHO1qPyDLsftrKTqIn0C-e3HjXGvgFYZqsNn6hE&usqp=CAU" width="100px"/>
- 
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzm0mn5uAkBKYPaprsaSkIfUfSHzB_kHO1qPyDLsftrKTqIn0C-e3HjXGvgFYZqsNn6hE&usqp=CAU" width="100px"/>
-        </br>
-       <input type="button" value="go Super Saiyan" onclick="changePics()">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/Tuw4Ha8WNDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- 
-       </hr>
-   </body>
+    </fieldset>
+    <fieldset>
+      <legend>How mandaay do you eat corn</legend>
+      <h3>Days Available:</h3>
+      <div>
+        <div><label>Sunday <input type="checkbox" name="available_field[]" value="sunday"></label></div>
+        <div><label>Monday <input type="checkbox" name="available_field[]" value="monday"></label></div>
+        <div><label>Tuesday <input type="checkbox" name="available_field[]" value="tuesday"></label></div>
+        <div><label>Wednesday <input type="checkbox" name="available_field[]" value="wednesday"></label></div>
+        <div><label>Thursday <input type="checkbox" name="available_field[]" value="thursday"></label></div>
+        <div><label>Friday <input type="checkbox" name="available_field[]" value="friday"></label></div>
+        <div><label>Saturday <input type="checkbox" name="available_field[]" value="saturday"></label></div>
+        <h3>Please write a one page paper on why you like corn, if you don't you are dumb</h3>
+        <textarea name="comments_field"></textarea>
+      </div>
+    </fieldset>
+    <input type="hidden" name="hidden_field" value="dkriegls">
+    <input type="submit">
+  </form>
+</body>
 </html>
